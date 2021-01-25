@@ -1,0 +1,6 @@
+plugin:
+    name: 'nemerki.api::lang.plugin.name'
+    description: 'nemerki.api::lang.plugin.description'
+    author: Nemerki
+    icon: oc-icon-code-fork
+    homepage: ''

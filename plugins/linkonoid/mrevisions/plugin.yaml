@@ -1,0 +1,10 @@
+plugin:
+    name: 'linkonoid.mrevisions::lang.plugin.name'
+    description: 'linkonoid.mrevisions::lang.plugin.description'
+    author: Linkonoid
+    icon: icon-table
+    homepage: 'https://github.com/linkonoid'
+permissions:
+    linkonoid.mrevisions.access_settings:
+        tab: 'linkonoid.mrevisions::lang.permissions.tab'
+        label: 'linkonoid.mrevisions::lang.permissions.settings'

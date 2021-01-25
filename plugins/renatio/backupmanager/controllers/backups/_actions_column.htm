@@ -1,0 +1,15 @@
+<a href="<?= Backend::url('renatio/backupmanager/backups/download/' . $record->id) ?>"
+   title="<?= e(trans('renatio.backupmanager::lang.help.download')) ?>"
+   data-toggle="tooltip"
+   data-placement="top"
+   class="btn btn-primary btn-sm"><i class="icon-download"></i></a>
+
+<a href="#"
+   title="<?= e(trans('renatio.backupmanager::lang.help.delete')) ?>"
+   data-toggle="tooltip"
+   data-placement="top"
+   data-request="onDeleteBackup"
+   data-request-data="id: <?= $record->id ?>"
+   data-request-confirm="<?= e(trans('renatio.backupmanager::lang.backups.delete_selected_confirm')) ?>"
+   data-stripe-load-indicator
+   class="btn btn-danger btn-sm m-l"><i class="icon-trash"></i></a>

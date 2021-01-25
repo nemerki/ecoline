@@ -1,0 +1,45 @@
+
+<form data-request="onSubscription" id="subscribe">
+    <div class="form-group">
+        <label for = "email" >{{'initbiz.newsletter::lang.form.label_email'| trans}}</label>
+        <input type="email"  name="email" id="email" class="form-control" placeholder = "{{'initbiz.newsletter::lang.form.placeholder_email'| trans}}">
+    </div>
+
+    {% for checkbox in checkboxes %}
+        <div class="form-group">
+            <input type="checkbox" name="{{checkbox.slug}}" id="checkbox-{{checkbox.slug}}" class="form-control-check" {{ (checkbox.required) ? 'required':''}}>
+            <label for="checkbox-{{checkbox.slug}}">{{ checkbox.text | raw }}</label>
+        </div>
+    {% endfor %}
+
+      <button type="submit" class="btn btn-primary">{{'initbiz.newsletter::lang.form.button_text'| trans}}</button>
+</form>
+
+<div class="col-md-12 input-group" id="notifications">
+    <div class="alert alert-success collapse" id="success" role="alert">
+        <span id="successMsg">
+        </span>
+    </div>
+    <div class="alert alert-danger collapse" id="failed" role="alert">
+        <span id="errorMsg">
+        </span>
+    </div>
+</div>
+
+{% put scripts %}
+    <script>
+        var subscribeForm = $('#subscribe');
+
+        subscribeForm.on('ajaxSuccess', function(event, context, data) {
+            $('#successMsg').text(data.content);
+            $('#successMsg').parent().show().delay(2000).fadeOut(500);
+        })
+
+
+        subscribeForm.on('ajaxError', function(event, context, error) {
+            $('#errorMsg').text(error);
+            $('#errorMsg').parent().show().delay(2000).fadeOut(500);
+            event.preventDefault();
+        })
+    </script>
+{% endput %}

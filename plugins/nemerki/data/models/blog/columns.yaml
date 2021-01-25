@@ -1,0 +1,15 @@
+columns:
+    title:
+        label: 'nemerki.data::lang.all.title'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'nemerki.data::lang.all.created_at'
+        type: text
+        searchable: true
+        sortable: true
+    is_active:
+        label: 'nemerki.data::lang.all.is_active'
+        type: switch
+        searchable: true

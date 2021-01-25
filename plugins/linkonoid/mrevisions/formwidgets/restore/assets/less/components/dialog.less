@@ -1,0 +1,303 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Drawers
+// ---------------------------------------------------------------------------------------------------------------------
+
+// .drawer-open     - body class for killing the scroll
+// .drawer          - container to scroll within
+// .drawer-dialog   - positioning shell for the actual aside
+// .drawer-content  - actual aside w/ bg and corners and shit
+
+//
+// Dependencies
+// ---------------------------------------------------------------------------------------------------------------------
+@import "../../../../../../modules/system/assets/ui/less/global.less";
+@import "../../../../../../modules/system/assets/ui/less/icon.close.less";
+
+//
+// Variables
+//
+@drawer-spacer-y:                     @padding-standard;
+@drawer-spacer-x:                     @padding-standard;
+
+@drawer-bg:                           #ffffff;
+@drawer-border-width:                 1px;
+@drawer-border-color:                 #e5e5e5;
+
+@drawer-cap-padding-y:                @padding-standard;
+@drawer-cap-padding-x:                @padding-standard;
+@drawer-cap-bg:                       #fbfbfb;
+
+@drawer-backdrop-bg:                  @overlay-background;
+@drawer-backdrop-opacity:             .5;
+
+@drawer-header-border-color:          #e5e5e5;
+@drawer-footer-border-color:          @drawer-header-border-color;
+
+@drawer-size-xl:                      1140px;
+@drawer-size-lg:                      960px;
+@drawer-size-md:                      720px;
+@drawer-size-sm:                      540px;
+@drawer-size-xs:                      320px;
+
+@z-index-drawer-background:           500;
+@z-index-drawer:                      600;
+
+body.dialog-open {
+  overflow: hidden;
+}
+
+.mac body.dialog-open {
+  margin-right: 0;
+}
+
+.dialog {
+  position: fixed;
+  min-height: 100%;
+  max-height: none;
+  overflow: auto;
+  overflow-y: scroll;
+  outline: 0;
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @z-index-drawer;
+  -webkit-overflow-scrolling: touch;
+
+  &.fade {
+    .dialog-container {
+      &.dialog-mode-drawer {
+        &.dialog-position-left {
+          .transform(translate3d(-100%, 0, 0));
+        }
+        &.dialog-position-right {
+          left: auto;
+          .transform(translate3d(100%, 0, 0));
+        }
+      }
+
+      &.dialog-mode-popup {
+        .transform(translate3d(0, 100%, 0));
+      }
+    }
+  }
+
+  &.in {
+    .dialog-container {
+      &.dialog-mode-drawer {
+        &.dialog-position-left {
+          transform: translate3d(0, 0, 0);
+        }
+        &.dialog-position-right {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      &.dialog-mode-popup {
+        .transform(translate3d(0, 0, 0));
+      }
+    }
+  }
+}
+
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @z-index-drawer-background - 10;
+  background-color: @drawer-backdrop-bg;
+  .opacity(1);
+
+  &.fade {
+    .opacity(0);
+  }
+
+  &.in {
+    .opacity(@drawer-backdrop-opacity);
+  }
+}
+
+.dialog-content {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 100%;
+  word-wrap: break-word;
+  background-color: @drawer-bg;
+  background-clip: border-box;
+  border: @drawer-border-width solid @drawer-border-color;
+
+  .control-scrollbar {
+    min-height: 100%;
+    flex-direction: column;
+    display: flex;
+  }
+
+  &.dialog-shaking {
+    .animation(dialog-shake 0.82s cubic-bezier(.36,.07,.19,.97) both);
+    .transform(translate3d(0, 0, 0));
+    .backface-visibility(hidden);
+    .perspective(1000px);
+  }
+}
+
+.dialog-body {
+  flex: 1 1 auto;
+  padding: @drawer-spacer-y @drawer-spacer-x;
+
+  > p:last-child {
+    margin-bottom: 20px;
+  }
+
+  &.dialog-no-header {
+    padding-top: @padding-standard;
+  }
+
+  &.dialog-no-footer {
+    padding-bottom: @padding-standard;
+  }
+}
+
+.dialog-header,
+.dialog-footer {
+  background-color: @drawer-cap-bg;
+}
+
+.dialog-header {
+  padding: @drawer-cap-padding-y @drawer-cap-padding-x;
+  margin-bottom: 0;
+  border-bottom: @drawer-border-width solid @drawer-border-color;
+
+  .dialog-title {
+    margin: 0;
+    font-weight: normal;
+    font-size: 18px;
+  }
+
+  .close {
+    margin-top: -2px;
+  }
+}
+
+.dialog-footer {
+  padding: (@drawer-cap-padding-y / 2) @drawer-cap-padding-x;
+  background-color: @drawer-cap-bg;
+  border-top: @drawer-border-width solid @drawer-border-color;
+  text-align: right;
+
+  &:extend(.clearfix all);
+
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+
+  &.loading-indicator-container {
+    .loading-indicator {
+      left: 15px;
+    }
+  }
+}
+
+.dialog-container {
+  position: fixed;
+  height: 100%;
+
+  &.dialog-mode-popup {
+    position: relative;
+    height: 80%;
+    margin: 65px auto 30px auto;
+  }
+
+  &.dialog-mode-drawer {
+    &.dialog-position-left {
+      left: 0;
+    }
+
+    &.dialog-position-right {
+      right: 16px;
+    }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    width: @drawer-size-md;
+
+    &.dialog-size-xs { width: @drawer-size-xs; }
+    &.dialog-size-sm { width: @drawer-size-sm; }
+  }
+  @media (min-width: @screen-md-min) {
+    &.dialog-size-md { width: @drawer-size-md; }
+    &.dialog-size-lg { width: @drawer-size-lg; }
+    &.dialog-size-xl { width: @drawer-size-xl; }
+  }
+}
+
+.control-dialog {
+
+  &.fade {
+    &:not(.in) {
+      pointer-events: none;
+    }
+
+    .dialog-container {
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &.fade.in {
+    .dialog-container {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+.control-scrollbar {
+  .dialog-header,
+  .dialog-footer {
+    position: sticky;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .dialog-header {
+    top: 0;
+  }
+
+  .dialog-footer {
+    bottom: 0;
+    &.loading-indicator-container {
+      min-height: 55px;
+    }
+  }
+
+  .dialog-body {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@keyframes dialog-shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+  }
+}

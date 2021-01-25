@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: initbiz.newsletter::lang.title.checkboxes
+form: ~/plugins/initbiz/newsletter/models/checkbox/fields.yaml
+modelClass: Initbiz\Newsletter\Models\Checkbox
+defaultRedirect: initbiz/newsletter/checkboxes
+
+create:
+    flashSave: initbiz.newsletter::lang.flash_checkboxes.saved
+    redirect: initbiz/newsletter/checkboxes
+    redirectClose: initbiz/newsletter/checkboxes
+
+update:
+    flashSave: initbiz.newsletter::lang.flash_checkboxes.updated
+    flashDelete: initbiz.newsletter::lang.flash_checkboxes.deleted
+    redirect: initbiz/newsletter/checkboxes
+    redirectClose: initbiz/newsletter/checkboxes

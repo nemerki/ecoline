@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Add cleancloud user profile field.'
+    - user_add_app_fields.php
+1.0.3:
+    - 'Add Address field.'
+    - user_add_address_fields.php

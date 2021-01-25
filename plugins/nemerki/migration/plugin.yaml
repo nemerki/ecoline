@@ -1,0 +1,6 @@
+plugin:
+    name: 'nemerki.migration::lang.plugin.name'
+    description: 'nemerki.migration::lang.plugin.description'
+    author: Nemerki
+    icon: oc-icon-adjust
+    homepage: ''

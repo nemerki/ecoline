@@ -1,0 +1,72 @@
+
+<div class="layout-item stretch layout-column">
+        <div data-control="formwidget" data-refresh-handler="form::onRefresh" class="form-widget form-elements layout" role="form" id="Form" data-disposable="">
+
+
+<!-- Primary Tabs -->
+<div class="layout-row">
+    
+ <div id="Form-primaryTabs" class="control-tabs primary-tabs layout has-tabs" data-control="tab">
+   <div class="layout-row min-size">
+
+    <ul class="nav nav-tabs" data-disposable="">
+                    <li class="active"><a href="#primarytab-1" data-target="#tabs1321-tab-01591368949568" data-toggle="tab" title="Changes">
+<span class="title"><span>Changes</span></span></a><span class="tab-close"><i>×</i></span></li>
+                    <li>
+                <a href="#primarytab-2" data-target="#tabs1321-tab-11591368949569" data-toggle="tab" title="New value">
+                    <span class="title">
+                        <span>New value</span>
+                    </span>
+                </a>
+<span class="tab-close"><i>×</i></span></li>
+    <li class="">
+                <a href="#primarytab-3" data-target="#tabs1321-tab-21591368949570" data-toggle="tab" title="Old value">
+                    <span class="title">
+                        <span>Old value</span>
+                    </span>
+                </a>
+            <span class="tab-close"><i>×</i></span></li>
+     </ul>
+  </div>
+
+
+
+<div class="tab-content layout-row">
+
+<div class="tab-pane layout-cell active">
+<div class="form-group form-group-preview partial-field span-full" data-field-name="diff_template" id="Form-field-ThemeLog-diff_template-group">
+<div class="form-control" data-plugin="template-diff" data-old-field-name="old_template" data-diff-type="words" data-new-field-name="template"></div>
+</div>
+<div class="form-group form-group-preview partial-field span-full" data-field-name="diff_content" id="Form-field-ThemeLog-diff_content-group">
+<div class="form-control"><pre data-plugin="template-diff" data-old-field-name="old_content" data-new-field-name="content" data-content-tag="pre"></pre></div>
+</div>
+</div>
+
+<div class="tab-pane layout-cell">
+<div class="form-group form-group-preview partial-field span-full" data-field-name="template" id="Form-field-ThemeLog-template-group">
+<div class="form-control"><?= e($revision->template) ?></div>
+</div>
+<div class="form-group form-group-preview partial-field span-full" data-field-name="content" id="Form-field-ThemeLog-content-group">
+<div class="form-control"><pre><?= e($revision->content.PHP_EOL) ?></pre></div>
+</div>
+</div>
+
+<div class="tab-pane layout-cell">
+<div class="form-group form-group-preview partial-field span-full" data-field-name="old_template" id="Form-field-ThemeLog-old_template-group">
+<div class="form-control"><?= e($revision->old_template) ?></div>
+</div>
+<div class="form-group form-group-preview partial-field span-full" data-field-name="old_content" id="Form-field-ThemeLog-old_content-group">
+<div class="form-control"><pre><?= e($revision->old_content.PHP_EOL) ?></pre></div>
+</div>
+</div>
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+

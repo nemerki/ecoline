@@ -1,0 +1,11 @@
+name: CategoryController
+modelClass: Nemerki\Data\Models\Selectable
+form: $/nemerki/data/models/selectable/categoryfields.yaml
+defaultRedirect: nemerki/data/categorycontroller
+create:
+    redirect: 'nemerki/data/categorycontroller/update/:id'
+    redirectClose: nemerki/data/categorycontroller
+update:
+    redirect: nemerki/data/categorycontroller
+    redirectClose: nemerki/data/categorycontroller
+preview: {  }

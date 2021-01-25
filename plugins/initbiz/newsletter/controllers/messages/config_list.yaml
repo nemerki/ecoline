@@ -1,0 +1,21 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+title: initbiz.newsletter::lang.menu.messages
+list: ~/plugins/initbiz/newsletter/models/message/columns.yaml
+modelClass: Initbiz\Newsletter\Models\Message
+recordUrl: initbiz/newsletter/messages/update/:id
+noRecordsMessage: backend::lang.list.no_records
+
+recordsPerPage: 15
+showCheckboxes: true
+showSetup: true
+
+defaultSort:
+    column: created_at
+    direction: desc
+
+toolbar:
+    buttons: list_toolbar
+

@@ -1,0 +1,10 @@
+name: SettingController
+form: $/nemerki/data/models/setting/fields.yaml
+modelClass: Nemerki\Data\Models\Setting
+defaultRedirect: nemerki/data/settingcontroller
+create:
+    redirect: 'nemerki/data/settingcontroller/update/:id'
+    redirectClose: nemerki/data/settingcontroller
+update:
+    redirect: nemerki/data/settingcontroller
+    redirectClose: nemerki/data/settingcontroller

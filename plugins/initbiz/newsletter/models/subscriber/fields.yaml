@@ -1,0 +1,19 @@
+fields:
+    confirmed:
+        label: 'initbiz.newsletter::lang.columns.confirmed'
+        span: full
+        type: switch
+    email:
+        label: 'initbiz.newsletter::lang.columns.email'
+        span: auto
+        type: text
+    token:
+        label: 'initbiz.newsletter::lang.columns.token'
+        span: auto
+        type: text
+    checkboxes:
+        label: 'initbiz.newsletter::lang.columns.checkboxes'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

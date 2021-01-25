@@ -1,0 +1,33 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+export:
+    # Page title
+    title: Export subscribes
+    #TODO LANG
+
+    # Output file name
+    fileName: subscribers.csv
+
+    # Export List Column configuration
+    list: $/initbiz/newsletter/models/subscribersexport/columns.yaml
+
+    # Export Model class
+    modelClass: Initbiz\Newsletter\Models\SubscribersExport
+
+    # Redirect when finished
+    redirect: initbiz/newsletter/subscribers
+
+import:
+    # Page title
+    title: Import Subscribers
+
+    # Export List Column configuration
+    list: $/initbiz/newsletter/models/subscribersimport/columns.yaml
+
+    # Export Model class
+    modelClass: Initbiz\Newsletter\Models\SubscribersImport
+    
+    # Redirect when finished
+    redirect: initbiz/newsletter/subscribers

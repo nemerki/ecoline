@@ -1,0 +1,37 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+export:
+    # Page title
+    title: Export Checkboxes
+    #TODO LANG
+
+    # Output file name
+    fileName: checkboxes.csv
+
+    # Export List Column configuration
+    list: $/initbiz/newsletter/models/checkboxesexport/columns.yaml
+
+    # Export Model class
+    modelClass: Initbiz\Newsletter\Models\CheckboxesExport
+
+    # Redirect when finished
+    redirect: initbiz/newsletter/checkboxes
+
+import:
+    # Page title
+    title: Import Checkboxes
+
+    # Export List Column configuration
+    list: $/initbiz/newsletter/models/checkboxesimport/columns.yaml
+
+    # Export Model class
+    modelClass: Initbiz\Newsletter\Models\CheckboxesImport
+
+    # Redirect when finished
+    redirect: initbiz/newsletter/checkboxes
+
+
+
+

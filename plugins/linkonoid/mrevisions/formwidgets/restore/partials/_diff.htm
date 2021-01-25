@@ -1,0 +1,114 @@
+<?php foreach ($revisions as $history) { 
+
+    $revision = array_first($history);
+    if ($revision->id != $revision_id) continue;
+
+?>
+
+<?= Form::open(['id' => 'previewForm']) ?>
+
+<input type="hidden" name="redirect" value="true">
+
+<div class="layout">
+		<div class="layout-cell">
+			<div class="layout-relative">
+				<div class="layout-absolute">
+
+					<div class="control-scrollbar" data-control="scrollbar">
+
+<div class="dialog-header">
+<div class="scoreboard">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>	
+        <div class="dialog-title">
+
+
+<?php if ($cmsPage):?>
+    
+        <div data-control="toolbar">
+            <?php //$this->makePartial('~/modules/cms/controllers/themelogs/_preview_scoreboard.htm', ['formModel' => $revision]) ?>
+            <?= $this->makePartial('diff_cms_scoreboard', ['formModel' => $revision]) ?>
+        </div>
+
+<?php else: ?>
+
+        <div data-control="toolbar">
+            <?= $this->makePartial('diff_model_scoreboard', ['formModel' => $revision]) ?>
+        </div>
+
+<?php endif ?>
+
+
+    </div>
+</div>
+</div>
+
+
+<div class="dialog-body">
+
+
+<?php if ($cmsPage): ?>
+
+
+<?= $this->makePartial('diff_cms', ['revision' => $revision]) ?>
+
+
+<?php else: ?>
+
+
+<?= $this->makePartial('diff_model', ['revision' => $revision, 'revisions' => $history]) ?>
+
+
+<?php endif ?>
+
+
+</div>
+
+<div class="dialog-footer loading-indicator-container">
+                            <button class="btn btn-primary oc-icon-window-restore" data-request="onRestore"
+                                    data-request-data="redirect:true,restore_all:0,revision_id:<?= $revision->id ?>"
+                                    data-dialog-load-indicator data-request-flash data-dismiss="modal">Restore <?php if (!$cmsPage): ?>selected changes<?php endif ?>
+                            </button>
+
+<?php if (!$cmsPage):?>
+                            <button type="submit" class="btn btn-info oc-icon-window-restore" data-request="onRestore"
+                                    data-request-data="restore_all:1,revision_id:<?= $revision->id ?>"
+                                    data-request-flash data-dismiss="modal">Restore all changes
+                            </button>
+<?php endif ?>
+                            <button type="button" class="btn btn-default" data-dismiss="dialog">Cancel</button>
+</div>
+ 
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+ 
+
+<?php } ?>
+
+
+<?= Form::close() ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

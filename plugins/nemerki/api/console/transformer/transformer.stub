@@ -1,0 +1,28 @@
+<?php namespace {{studly_author}}\{{studly_plugin}}\Transformers;
+
+use {{model}};
+use Nemerki\API\Classes\Transformer;
+
+
+/**
+ * {{name}}Transformer for {{model}}
+ */
+class {{name}}Transformer extends Transformer
+{
+    // Related transformer that can be included
+    public $availableIncludes = [
+
+    ];
+
+    // Related transformer that will be included by default
+    public $defaultIncludes = [
+
+    ];
+
+    public function data({{name}} $model)
+    {
+        return [
+            'id'    => (int) $model->id
+        ];
+    }
+}

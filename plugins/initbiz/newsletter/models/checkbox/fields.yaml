@@ -1,0 +1,25 @@
+fields:
+    name:
+        label: 'initbiz.newsletter::lang.checkboxes.name'
+        span: auto
+        required: true
+        type: text
+    slug:
+        label: 'initbiz.newsletter::lang.columns.slug'
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    required:
+        label: 'initbiz.newsletter::lang.checkboxes.required'
+        type: switch
+        default: false
+        span: left
+    text:
+        label: 'initbiz.newsletter::lang.checkboxes.text'
+        size: large
+        span: full
+        oc.commentPosition: below
+        type: richeditor

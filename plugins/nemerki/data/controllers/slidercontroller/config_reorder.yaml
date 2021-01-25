@@ -1,0 +1,5 @@
+title: SliderController
+modelClass: Nemerki\Data\Models\Slider
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

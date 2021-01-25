@@ -1,0 +1,26 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    title:
+        label: initbiz.newsletter::lang.columns.title
+        searchable: true
+
+    sent:
+        label: initbiz.newsletter::lang.columns.sent
+        searchable: true
+        type: switch
+
+    created_at:
+        label: initbiz.newsletter::lang.columns.created
+        searchable: true
+        type: datetime
+        format: Y-m-d G:i
+
+    updated_at:
+        label: initbiz.newsletter::lang.columns.updated
+        searchable: true
+        type: datetime
+        format: Y-m-d G:i

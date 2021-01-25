@@ -1,0 +1,124 @@
+tabs:
+    fields:
+        enabled:
+            tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+            label: linkonoid.mrevisions::lang.settings.fields.enabled
+            span: left
+            type: switch
+        #access:
+            #tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+            #label: linkonoid.mrevisions::lang.settings.fields.access
+            #span: right
+            #type: switch
+        limit:
+            tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+            label: linkonoid.mrevisions::lang.settings.fields.limit
+            span: left
+            type: number
+            default: 9
+            min: 1
+            max: 999
+
+        models:
+            tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+            span: full
+            label: linkonoid.mrevisions::lang.settings.fields.models
+            type: repeater
+            #mode: array
+            titleFrom: name
+            form:
+                fields:
+
+                    enabled:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_enabled
+                        span: left
+                        type: switch
+
+                    quickButtonEnabled:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_quickButtonEnabled
+                        span: auto
+                        type: switch
+
+                    modelSelect:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_model_select
+                        span: left
+                        type: dropdown
+                        span: auto
+                        required: true
+
+                    limit:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_limit
+                        span: auto
+                        type: number
+                        default: 5
+                        min: 1
+                        max: 999
+
+                    modelCustom:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_model
+                        type: text
+                        span: left
+                        dependsOn: modelSelect
+                        trigger:
+                            action: show|enable
+                            field: modelSelect
+                            condition: value[custom]
+                        placeholder: '\Vendor\Plugin\Models\YourModelName'
+
+                    modelTab:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_tab
+                        type: dropdown
+                        dependsOn: modelSelect
+                        span: auto
+
+                    revisionables:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_revisionables
+                        #emptyOption: -- no DB fields --
+                        span: full
+                        cssClass: 'inline-options'
+                        type: checkboxlist
+                        quickselect: true
+                        dependsOn: modelSelect
+                        trigger:
+                            action: hide|disable
+                            field: modelSelect
+                            condition: value[\Cms\Classes\Page] | value[\Cms\Classes\Partial] | value[\Cms\Classes\Layout] | value[\Cms\Classes\Content] | value[\Cms\Classes\Asset] | value[\RainLab\Pages\Classes\Page] | value[\RainLab\Pages\Classes\Menu] | value[\RainLab\Pages\Classes\Content]
+
+                    revisionable_trigger:
+                        span: full
+                        type: dropdown
+                        dependsOn: modelSelect
+                        cssClass: hidden
+
+                    revisionable_array:
+                        tab: linkonoid.mrevisions::lang.settings.tabs.workmode
+                        label: linkonoid.mrevisions::lang.settings.fields.models_revisionable_array
+                        span: full
+                        type: text
+                        hidden: false
+                        dependsOn:
+                            - modelSelect
+                            - modelCustom
+                            - revisionable_trigger
+                        trigger:
+                            action: hide|disable
+                            field: modelSelect
+                            condition: value[\Cms\Classes\Page] | value[\Cms\Classes\Partial] | value[\Cms\Classes\Layout] | value[\Cms\Classes\Content] | value[\Cms\Classes\Asset] | value[\RainLab\Pages\Classes\Page] | value[\RainLab\Pages\Classes\Menu] | value[\RainLab\Pages\Classes\Content]
+
+        import_export:
+            tab: linkonoid.mrevisions::lang.settings.tabs.import_export
+            #label: 'Disabled in DEMO'
+            span: left
+            type: 'Linkonoid\MRevisions\FormWidgets\FileImportExport'
+            mode: file
+            maxFiles: 1
+            fileTypes: yaml, zip
+            maxFilesize: 1Mb
+            #disabled: true

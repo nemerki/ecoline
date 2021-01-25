@@ -1,0 +1,27 @@
+Extended License 
+
+Revision date: 10 September 2016
+
+1. License Agreement
+  1.1 The Extended License grants you, the purchaser, an ongoing, non-exclusive, worldwide license to make use of the digital work (Product) you have selected. Read the rest of this license for the details that apply to your use of the Product, as well as the Licensing FAQs which also form part of this license.
+  1.2 You are licensed to use the Product to create one or more Websites for yourself or for any number of clients ("multiple applications"), and the Website may be Sold as part of a Web Development Service only.
+  1.3 A Website is one of the following things, both requiring an application of skill and effort.
+  (a) For a Product that is a theme, the Website is a customised implementation of the Product. For example: the Product is a theme template and the end result is the final Website inluding your customisations.
+  (b) For a Product that is a plugin, a Website is a work that incorporates the Product and additional content, so that it is larger in scope and different in nature than the Product. For example: the Product is a blogging tool and the end result is a Website.
+  See the FAQs for examples and information about Websites and the multiple usage requirement.
+2. Permitted Use
+  2.1 You may create the Website for a client, and this license is then sublicensed from you to your client using the terms found in the Regular License.
+  2.2 This license is a "multi-use" license, which means that you may use the Product to create more than one unique Website. You may sell and make any number of copies of the Website, as long as it is provided as part of a Web Development Service.
+  2.3 You may modify or manipulate the Product. You may combine the Product with other works and make a derivative work from it. The resulting works are subject to the terms of this license. You may do these things as long as the Website you then create is one that's permitted under clause 1.3. For example: you may license a plugin, customize the code and add your own features to create a plugin that you offer as part of your web development service.
+3. Restrictions
+  3.1 You may not re-distribute the Product as stock, in a tool or template, or with source files. You may not do this with a Product either on its own or bundled with other products, and even if you modify the Product. You may not re-distribute or make available the Product as-is or with superficial modifications. 
+  For example: You can't purchase a theme, convert it to another platform and sell or give it to more than one client. You can't license the product and then make it available as-is on your website for your users to download.
+  3.2 Although you may modify the Product and therefore delete unwanted components before creating your Website, you can't extract and use a single component of a Product on a stand-alone basis. For example: You license a theme containing icons. You may delete unwanted icons from the theme. But you may not extract an icon to use outside of the theme.
+  3.5 You must not permit your client or end user of the Website to extract the Product and use it separately from the Website.
+4. Other Terms
+  4.1 For some Products, a component of the Product will be sourced by the author from elsewhere and different license terms may apply to the component, such as someone else's license or an open source or creative commons license. If so, the component will be identified by the author in the Product's description page or in the Product's downloaded files. The other license will apply to that component instead of this license. This license will apply to the rest of the Product. For example: A plugin might contain scripts licensed under a MIT license. The MIT license applies to those specific scripts. This license applies to the rest of the theme.
+  4.2 Some Products are partially subject to a GNU General Public License (GPL) or another open source license even if the Product was entirely created by the author. For these Products, a 'split license' applies. This means that the open source license applies to an extent that's determined by the open source license terms and the nature of the Product, and this license applies to the rest of the Product. Where split licensing applies, this is noted in the Product's download files.
+  4.3 Products that contain digital versions of real products, trademarks or other intellectual property owned by others have not been property released. These Products are licensed on the basis of editorial use only. It is your responsibility to consider whether your use of these Products requires a clearance and if so, to obtain that clearance from the intellectual property rights owner.
+  4.4 This license applies in conjunction with the October Marketplace Terms for your use of October Marketplace. If there is an inconsistency between this license and the October Marketplace Terms, this license will apply to the extent necessary to resolve the inconsistency.
+  4.5 This license can be terminated if you breach it. If that happens, you may no longer make copies of or distribute the Website until you remove the Product from it.
+  4.6 The author of the Product retains ownership of the Product but grants you the license on these terms. This license is between the author of the Product and you. OctoberCMS is not a party to this license nor affilliated with the author of the Product.

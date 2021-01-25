@@ -1,0 +1,23 @@
+<?php foreach($revisions as $change) { ?>
+    <div class="form-group checkbox-field is-required">
+         <div class="checkbox custom-checkbox">
+              <input name="checkbox_<?= $revision->id ?>[]" value="<?= $change->id ?>" type="checkbox" id="checkbox_<?= $change->id ?>" checked>
+              <label for="checkbox_<?= $change->id ?>"><?= e(trans($getFieldName($change->field))) ?></label>
+         </div>
+    </div>
+
+
+<div class="form-group form-group-preview partial-field span-full hidden" data-field-name="content" id="Form-field-Restore-content-group">
+<div class="form-control"><pre<?= $change->id ?>><?= e($change->new_value.PHP_EOL) ?></pre></div>
+</div>
+
+<div class="form-group form-group-preview partial-field span-full hidden" data-field-name="old_content" id="Form-field-Restore-old_content-group">
+<div class="form-control"><pre<?= $change->id ?>><?= e($change->old_value.PHP_EOL) ?></pre></div>
+</div>
+
+
+<div class="form-group form-group-preview partial-field span-full" data-field-name="diff_content" id="Form-field-Restore-diff_content-group">
+<div class="form-control"><pre data-plugin="template-diff" data-old-field-name="old_content" data-new-field-name="content" data-diff-type="words" data-content-tag="pre<?= $change->id ?>"></pre></div>
+</div>
+
+<?php } ?>

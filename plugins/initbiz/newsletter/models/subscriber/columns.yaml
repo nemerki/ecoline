@@ -1,0 +1,17 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    email:
+        label: initbiz.newsletter::lang.userColumns.email
+        searchable: true
+
+    confirmed:
+        label: initbiz.newsletter::lang.userColumns.confirmed
+        type: switch
+        searchable: true
+
+    created_at:
+        label: initbiz.newsletter::lang.userColumns.joined

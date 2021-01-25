@@ -1,0 +1,37 @@
+<?php
+    $isCreate = true;
+	//$this->formGetContext() == 'create';
+	//$record_id = $this->vars['formModel']->attributes['id'];
+       //$pageUrl = isset($pageUrl) ? $pageUrl : null;
+
+if (!empty($revisions)):
+?>
+
+
+<?php if (\BackendAuth::getUser()->hasPermission(['linkonoid.mrevisions.access_restore'])): ?>
+<div class="form-buttons loading-indicator-container">
+
+    <?php foreach ($revisions as $history) { ?>
+    <?php $record = array_first($history) ?>
+    <?php break; } ?>
+
+    <!-- Restore content data -->
+    <a  
+
+        class="btn btn-primary oc-icon-window-restore restore"
+	data-request="onRestore"
+        data-request-data="<?php if ($isCreate): ?>redirect:1,<?php endif ?>restore_all:1,revision_id:<?= $record->id ?>"
+        data-request-flash
+        data-load-indicator="<?= e(trans('backend::lang.form.restore')) ?>"
+        data-request-before-update="$el.trigger('change.oc.changeMonitor')"
+        data-hotkey="ctrl+r">
+            <?= e(trans('backend::lang.form.restore')) ?> last revision&nbsp;(Ctrl+R)
+
+    </a>
+
+</div>
+<?php endif; ?>
+
+<?php endif ?>
+
+

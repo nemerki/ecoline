@@ -1,0 +1,6 @@
+plugin:
+    name: 'nemerki.profile::lang.plugin.name'
+    description: 'nemerki.profile::lang.plugin.description'
+    author: Nemerki
+    icon: oc-icon-adjust
+    homepage: ''

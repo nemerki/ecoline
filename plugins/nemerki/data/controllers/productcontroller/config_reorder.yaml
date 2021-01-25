@@ -1,0 +1,5 @@
+title: ProductController
+modelClass: Nemerki\Data\Models\Product
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

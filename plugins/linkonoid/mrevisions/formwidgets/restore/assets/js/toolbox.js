@@ -1,0 +1,3 @@
+/*
+=require components/dialog.js
+ */

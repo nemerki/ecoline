@@ -1,0 +1,10 @@
+name: BlogController
+form: $/nemerki/data/models/blog/fields.yaml
+modelClass: Nemerki\Data\Models\Blog
+defaultRedirect: nemerki/data/blogcontroller
+create:
+    redirect: 'nemerki/data/blogcontroller/update/:id'
+    redirectClose: nemerki/data/blogcontroller
+update:
+    redirect: nemerki/data/blogcontroller
+    redirectClose: nemerki/data/blogcontroller

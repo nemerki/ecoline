@@ -1,0 +1,19 @@
+fields:
+    is_active:
+        label: 'nemerki.data::lang.all.is_active'
+        span: full
+        default: 1
+        type: switch
+    title:
+        label: 'nemerki.data::lang.all.title'
+        span: full
+        type: text
+    url:
+        label: 'nemerki.data::lang.all.url'
+        span: full
+        type: text
+    img:
+        label: 'nemerki.data::lang.all.img'
+        span: auto
+        mode: image
+        type: mediafinder

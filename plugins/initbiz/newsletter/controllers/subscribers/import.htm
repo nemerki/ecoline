@@ -1,0 +1,27 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+    <li>
+        <a href="<?= Backend::url('initbiz/newsletter/subscribers') ?>"><?= e(trans('initbiz.newsletter::lang.title.subscribers')) ?></a>
+    </li>
+    <li><?= e(trans($this->pageTitle)) ?></li>
+</ul>
+<?php Block::endPut() ?>
+
+<?= Form::open(['class' => 'layout', 'style' => 'padding-left:20px']) ?>
+
+<div class="layout-row">
+    <?= $this->importRender() ?>
+</div>
+
+<div class="form-buttons">
+    <button
+            type="submit"
+            data-control="popup"
+            data-handler="onImportLoadForm"
+            data-keyboard="false"
+            class="btn btn-primary">
+        Import records
+    </button>
+</div>
+
+<?= Form::close() ?>

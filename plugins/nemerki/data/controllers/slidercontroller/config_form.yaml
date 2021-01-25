@@ -1,0 +1,10 @@
+name: SliderController
+form: $/nemerki/data/models/slider/fields.yaml
+modelClass: Nemerki\Data\Models\Slider
+defaultRedirect: nemerki/data/slidercontroller
+create:
+    redirect: 'nemerki/data/slidercontroller/update/:id'
+    redirectClose: nemerki/data/slidercontroller
+update:
+    redirect: nemerki/data/slidercontroller
+    redirectClose: nemerki/data/slidercontroller

@@ -1,0 +1,32 @@
+<div class="scoreboard-item title-value">
+    <h4>ID</h4>
+    <p>#<?= e($formModel->id) ?></p>
+</div>
+<div class="scoreboard-item title-value">
+    <h4>Context</h4>
+    <p><?= e(!empty($formModel->deleted_at) ? 'delete' : 'update') ?></p>
+</div>
+<div class="scoreboard-item title-value">
+    <h4>Model</h4>
+    <p><?= e(array_reverse(explode('\\',$formModel->revisionable_type))[0]) ?></p>
+    <p class="description"><?= e($formModel->revisionable_type) ?></p>
+</div>
+<?php if ($formModel->user_id): ?>
+    <div class="scoreboard-item title-value">
+        <h4><?= e(trans('cms::lang.theme_log.user')) ?></h4>
+        <p><?= e(\Backend\Models\User::findOrFail($formModel->user_id)->login) ?></p>
+        <p class="description"><?= e(\Backend\Models\User::findOrFail($formModel->user_id)->full_name) ?></p>
+    </div>
+<?php endif ?>
+<div class="scoreboard-item title-value">
+    <h4><?= e(trans('cms::lang.theme_log.created_at')) ?></h4>
+    <p><?= e($formModel->created_at->toDateString()) ?></p>
+    <p class="description"><?= e($formModel->created_at->toDayDateTimeString()) ?></p>
+</div>
+
+
+
+
+
+
+

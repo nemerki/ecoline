@@ -1,0 +1,8 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+    email: initbiz.newsletter::lang.columns.email
+    confirmed: initbiz.newsletter::lang.columns.confirmed
+    token: initbiz.newsletter::lang.columns.token

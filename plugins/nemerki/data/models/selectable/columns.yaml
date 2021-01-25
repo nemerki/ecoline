@@ -1,0 +1,10 @@
+columns:
+    name:
+        label: 'nemerki.data::lang.all.name'
+        type: text
+        searchable: true
+    created_at:
+        label: 'nemerki.data::lang.all.created_at'
+        type: text
+        searchable: true
+        sortable: true

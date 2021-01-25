@@ -1,0 +1,10 @@
+name: ProductController
+form: $/nemerki/data/models/product/fields.yaml
+modelClass: Nemerki\Data\Models\Product
+defaultRedirect: nemerki/data/productcontroller
+create:
+    redirect: 'nemerki/data/productcontroller/update/:id'
+    redirectClose: nemerki/data/productcontroller
+update:
+    redirect: nemerki/data/productcontroller
+    redirectClose: nemerki/data/productcontroller

@@ -1,0 +1,4 @@
+1.0.1: First version of Multi Revisions
+1.0.2: Cms\Classes\Asset error fixed. Little changes in settings.
+1.0.3: DependsOn error for select model fixed.
+1.0.4: Added set Tab select for history table visualisation. Little changes in settings.

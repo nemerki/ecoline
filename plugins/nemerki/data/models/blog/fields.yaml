@@ -1,0 +1,29 @@
+fields:
+    is_active:
+        label: 'nemerki.data::lang.all.is_active'
+        span: auto
+        default: 1
+        type: switch
+    is_home:
+        label: 'Is Home'
+        span: auto
+        type: switch
+    title:
+        label: 'nemerki.data::lang.all.title'
+        span: full
+        type: text
+    content:
+        label: 'nemerki.data::lang.all.content'
+        size: ''
+        span: full
+        type: richeditor
+    img:
+        label: 'nemerki.data::lang.all.img'
+        mode: image
+        span: auto
+        type: mediafinder
+    cover:
+        label: 'nemerki.data::lang.all.cover'
+        mode: image
+        span: auto
+        type: mediafinder

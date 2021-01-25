@@ -1,0 +1,5 @@
+title: BlogController
+modelClass: Nemerki\Data\Models\Blog
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

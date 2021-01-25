@@ -1,0 +1,39 @@
+1.0.1:
+    - 'First version of newsletter'
+    - create_subscribers_table.php
+    - create_messages_table.php
+1.0.2:
+    - 'Error responses using AJAX and some small fixes'
+1.0.3:
+    - '!!! Big changes in newsletter plugin. See upgrade guide before upgrading.'
+    - update_messages_table.php
+    - update_subscribers_table.php
+1.0.4:
+    - 'Adding and removing checkboxes introduced'
+    - create_checkboxes_table.php
+    - create_checkbox_subscriber_table.php
+    - create_checkbox_message_table.php
+1.0.5:
+    - 'Updated table initbiz_newsletter_checkboxes'
+    - builder_table_update_initbiz_newsletter_checkboxes.php
+1.0.6:
+    - 'Updated table initbiz_newsletter_checkboxes'
+    - builder_table_update_initbiz_newsletter_checkboxes_2.php
+1.0.7:
+    - 'Minor fixes'
+1.0.8:
+    - 'Creating and updating subscriber form backend'
+1.0.9:
+    - 'Primary key name shortened'
+1.0.10:
+    - 'Small type fix'
+1.0.11:
+    - 'DB engine added'
+1.0.12:
+    - 'Nullable fix'
+1.0.13:
+    - 'TinyInt fix'
+1.0.14:
+    - 'Add queue support, sending test e-mails and little cleanup'
+1.0.15:
+    - 'Disable queues by default to keep legacy working'

@@ -1,0 +1,19 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: initbiz.newsletter::lang.title.subscribers
+form: ~/plugins/initbiz/newsletter/models/subscriber/fields.yaml
+modelClass: Initbiz\Newsletter\Models\Subscriber
+defaultRedirect: initbiz/newsletter/subscribers
+
+create:
+    flashSave: initbiz.newsletter::lang.flash_subscribers.saved
+    redirect: initbiz/newsletter/subscribers
+    redirectClose: initbiz/newsletter/subscribers
+
+update:
+    flashSave: initbiz.newsletter::lang.flash_subscribers.updated
+    flashDelete: initbiz.newsletter::lang.flash_subscribers.deleted
+    redirect: initbiz/newsletter/subscribers
+    redirectClose: initbiz/newsletter/subscribers

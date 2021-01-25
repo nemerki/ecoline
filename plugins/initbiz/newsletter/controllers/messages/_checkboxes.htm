@@ -1,0 +1,30 @@
+<div class="form-group  checkbox-field span-full">
+    <?php foreach($checkboxes as $checkbox): ?>
+    <?php if($checkbox->required) {continue;} ?>
+    <div class="checkbox custom-checkbox" tabindex="0">
+    <input
+            type="hidden"
+            name="<?= $checkbox->slug ?>"
+            value="0"
+    <?= $this->previewMode ? 'disabled="disabled"' : '' ?>>
+    <input
+            type="checkbox"
+            id="<?= $checkbox->id ?>"
+            name="checkboxes[]"
+            value="<?= $checkbox->slug ?>"
+        <?= $this->previewMode ? 'disabled="disabled"' : '' ?>
+        <?php if(isset($checked_checkboxes)) { ?>
+        <?php if(in_array($checkbox->slug,$checked_checkboxes, true )) echo 'checked="checked"';?>
+        <?php }?>
+        <?= $field->getAttributes() ?>>
+
+    <label for="<?= $checkbox->id ?>">
+        <?= $checkbox->name ?>
+    </label>
+    <?php if ($field->comment): ?>
+    <p class="help-block"><?= e(trans($field->comment)) ?></p>
+    <?php endif ?>
+</div>
+    <?php endforeach ?>
+
+</div>

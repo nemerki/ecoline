@@ -1,0 +1,34 @@
+fields:
+    is_active:
+        label: 'nemerki.data::lang.all.is_active'
+        span: full
+        default: 1
+        type: switch
+    name:
+        label: 'nemerki.data::lang.all.name'
+        span: auto
+        type: text
+    category:
+        label: 'nemerki.data::lang.all.category'
+        nameFrom: name
+        descriptionFrom: description
+        emptyOption: Select
+        span: auto
+        type: relation
+    price:
+        label: Price
+        span: auto
+        type: number
+    price_express:
+        label: 'Price Express'
+        span: auto
+        type: number
+    pieces:
+        label: Pieces
+        span: auto
+        type: number
+    img:
+        label: 'nemerki.data::lang.all.img'
+        span: full
+        mode: image
+        type: mediafinder

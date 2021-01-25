@@ -1,0 +1,16 @@
+columns:
+    name:
+        label: name
+        type: text
+        searchable: true
+    category:
+        label: 'nemerki.data::lang.all.category'
+        type: text
+        searchable: true
+        select: name
+        relation: category
+    created_at:
+        label: 'nemerki.data::lang.all.created_at'
+        type: text
+        searchable: true
+        sortable: true

@@ -1,0 +1,6 @@
+plugin:
+    name: 'nemerki.mediamanagerrename::lang.plugin.name'
+    description: 'nemerki.mediamanagerrename::lang.plugin.description'
+    author: Nemerki
+    icon: oc-icon-image
+    homepage: ''

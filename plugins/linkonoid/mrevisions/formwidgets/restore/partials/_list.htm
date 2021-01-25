@@ -1,0 +1,68 @@
+<div>
+  <table class="table data" data-control="rowlink" >
+      <tbody>
+        <?php if (!empty($revisions)): ?>
+          <?php foreach($revisions as $history): ?>
+	  <?php $revision = array_first($history); ?>
+	  
+            <tr>
+	      <td class="column-button nolink"><a class="btn btn-link oc-icon-calendar" href="<?= $cmsPage ? '/backend/cms/themelogs' : '/backend/system/requestlogs' ?>"><?= $revision->created_at->toDayDateTimeString(); ?></a></td>
+              <td class="column-button nolink"><a class="btn btn-link oc-icon-user" href="/backend/backend/users/update/<?= $revision->user_id ?>"><?php if ($revision->user_id) { ?><?= e(\BackendAuth::getUser($revision->user_id)->full_name) ?><?php }else{ ?>User not defined<?php } ?></a></td>
+
+
+            <?php if (\BackendAuth::getUser()->hasPermission(['linkonoid.mrevisions.access_restore'])): ?>
+
+              <td class="column-button nolink">
+
+    <a class="btn btn-link oc-icon-hdd-o"
+        data-control="dialog"
+        data-handler="onContentLoad"
+	data-extra-data="revision_id:<?= $revision->id ?>"
+        data-position="right"
+        data-size="lg"
+        data-mode="drawer"
+        data-stripe-load-indicator
+        data-keyboard="true"
+        data-request-before-update="$el.trigger('change.oc.changeMonitor')"
+        href="javascript:;">Details
+    </a>
+              
+
+
+              </td>
+
+
+<td class="column-button nolink">
+                  <a class="btn btn-link oc-icon-window-restore"
+	              data-request="onRestore"
+                      data-request-data="restore_all:1,revision_id:<?= $revision->id ?>"
+                      data-request-flash
+                      data-load-indicator="<?= e(trans('backend::lang.form.restore')) ?>"
+                      data-request-before-update="$el.trigger('change.oc.changeMonitor')">
+                      <?= e(trans('backend::lang.form.restore')) ?> this revision
+                  </a>
+</td>
+
+
+            <?php endif; ?>
+
+            </tr>
+          <?php endforeach; ?>
+      <?php else: ?>
+        <tr class="no-data">
+            <td colspan="100" class="nolink">
+                <p class="no-data">
+                    No have changes history.
+                </p>
+            </td>
+        </tr>
+      <?php endif; ?>
+      </tbody>
+  </table>
+</div>
+
+
+
+
+
+

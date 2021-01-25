@@ -1,0 +1,7 @@
+<div class="list-header">
+    <?php if ( ! empty($issues)) : ?>
+        <?= $this->makeHintPartial(null, 'issues_hint', ['type' => 'danger']) ?>
+    <?php endif ?>
+</div>
+
+<?= $this->listRender() ?>

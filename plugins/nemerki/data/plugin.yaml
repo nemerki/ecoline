@@ -1,0 +1,79 @@
+plugin:
+    name: 'nemerki.data::lang.plugin.name'
+    description: 'nemerki.data::lang.plugin.description'
+    author: Nemerki
+    icon: oc-icon-adjust
+    homepage: ''
+permissions:
+    data:
+        tab: 'nemerki.data::lang.plugin.name'
+        label: 'nemerki.data::lang.plugin.name'
+    selectabel:
+        tab: 'nemerki.data::lang.all.selectable'
+        label: 'nemerki.data::lang.all.selectable'
+    product:
+        tab: 'nemerki.data::lang.plugin.name'
+        label: Product
+    setting:
+        tab: 'nemerki.data::lang.plugin.name'
+        label: Setting
+    slider:
+        tab: 'nemerki.data::lang.plugin.name'
+        label: Slider
+    blog:
+        tab: 'nemerki.data::lang.plugin.name'
+        label: Blog
+    category:
+        tab: 'nemerki.data::lang.plugin.name'
+        label: 'nemerki.data::lang.all.category'
+navigation:
+    main-menu-data:
+        label: 'nemerki.data::lang.plugin.name'
+        url: nemerki/data/datacontroller
+        icon: icon-database
+        permissions:
+            - data
+        order: '102'
+        sideMenu:
+            side-menu-category:
+                label: 'nemerki.data::lang.all.category'
+                url: nemerki/data/categorycontroller
+                icon: icon-sitemap
+                permissions:
+                    - category
+            side-menu-product:
+                label: Product
+                url: nemerki/data/productcontroller
+                icon: icon-sitemap
+                permissions:
+                    - product
+            side-menu-setting:
+                label: Setting
+                url: nemerki/data/settingcontroller
+                icon: icon-sitemap
+                permissions:
+                    - setting
+            side-menu-slider:
+                label: 'nemerki.data::lang.all.slider'
+                url: nemerki/data/slidercontroller
+                icon: icon-sitemap
+                permissions:
+                    - slider
+            side-menu-blog:
+                label: 'nemerki.data::lang.menu.blog'
+                url: nemerki/data/blogcontroller
+                icon: icon-sitemap
+                permissions:
+                    - blog
+    main-menu-selectable:
+        label: 'nemerki.data::lang.all.selectable'
+        url: nemerki/data/selectablecontroller
+        icon: icon-align-justify
+        permissions:
+            - selectabel
+        order: '103'
+        sideMenu:
+            side-menu-item:
+                label: 'Menu Item'
+                icon: icon-sitemap
+                url: /

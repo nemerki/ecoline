@@ -1,0 +1,9 @@
+fields:
+    is_active:
+        label: 'nemerki.data::lang.all.is_active'
+        span: full
+        type: switch
+    name:
+        label: 'nemerki.data::lang.all.name'
+        span: full
+        type: text

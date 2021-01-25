@@ -1,0 +1,5 @@
+title: CategoryController
+modelClass: Nemerki\Data\Models\Selectable
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

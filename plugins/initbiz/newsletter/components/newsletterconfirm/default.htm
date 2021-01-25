@@ -1,0 +1,70 @@
+{% if not confirmed %}
+    <h6>{{'initbiz.newsletter::lang.manage.thank_you_message'| trans }}</h6>
+{% else %}
+    {% if subscriberExist %}
+        {% set data = { 'email' : email, 'token' : token } %}
+        <h4>{{'initbiz.newsletter::lang.manage.config_heading'| trans }}</h4>
+        {% if checkboxes %}
+            <form data-request="onUpdate" id="update">
+                {% for checkbox in checkboxes %}
+                    <div>
+                        <input type="checkbox" name="{{checkbox.slug}}" id="checkbox-{{checkbox.slug}}" class="form-control-check" {{ (checkbox.required) ? 'required':''}} {{checkbox.checked? 'checked':''}}>
+                        <label for="checkbox-{{checkbox.slug}}">{{ checkbox.text | raw }}</label>
+                    </div>
+                {% endfor %}
+                <input type="hidden" value="{{ token }}" name="token">
+                <input type="hidden" value="{{ email }}" name="email">
+
+                <button type="submit" class="btn btn-primary" style="width:100%">{{'initbiz.newsletter::lang.manage.update_button_text'| trans}}</button>
+            </form>
+        {% endif %}
+        <hr>
+        <form data-request="onUnsubscribe" data-request-data='{{ data |json_encode(constant('JSON_PRETTY_PRINT')) | raw }}' id="unsubscribe">
+            <button class="btn btn-danger" type="submit" style="width:100%"> {{'initbiz.newsletter::lang.manage.sign_out_button_text'| trans}} </button>
+        </form>
+
+        <div class="col-md-12 input-group" id="notifications">
+            <div class="alert alert-success collapse" id="success" role="alert">
+                <span id="successMsg"> </span>
+            </div>
+            <div class="alert alert-danger collapse" id="failed" role="alert">
+                <span id="errorMsg"> </span>
+            </div>
+        </div>
+    {% else %}
+         <h6>{{'initbiz.newsletter::lang.manage.wrong_path'| trans }}</h6>
+    {% endif %}
+{% endif %}
+
+{% put scripts %}
+    <script>
+        var updateForm = $('#update');
+
+        updateForm.on('ajaxSuccess', function(event, context, data) {
+            $('#successMsg').text(data.content);
+            $('#successMsg').parent().show().delay(2000).fadeOut(500);
+        })
+
+        updateForm.on('ajaxError', function(event, context, error) {
+            $('#errorMsg').text(error);
+            $('#errorMsg').parent().show().delay(2000).fadeOut(500);
+            event.preventDefault();
+        })
+
+        var unsubscribeForm = $('#unsubscribe');
+
+        unsubscribeForm.on('ajaxSuccess', function(event, context, data) {
+            $('#successMsg').text(data.content);
+            $('#successMsg').parent().show().delay(2000).fadeOut(500);
+            window.location.href = data.redirectUrl;
+        })
+
+        unsubscribeForm.on('ajaxError', function(event, context, error) {
+            $('#errorMsg').text(error);
+            $('#errorMsg').parent().show().delay(2000).fadeOut(500);
+            event.preventDefault();
+        })
+
+
+    </script>
+{% endput %}

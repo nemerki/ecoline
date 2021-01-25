@@ -1,0 +1,28 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: initbiz.newsletter::lang.columns.name
+        searchable: true
+    required:
+        label: initbiz.newsletter::lang.columns.required
+        searchable: true
+        type: switch
+        default: false
+    text_parsed:
+        label: initbiz.newsletter::lang.columns.text
+        sortable: false
+        type: partial
+        path: ~/plugins/initbiz/newsletter/models/checkbox/_text_parsed.htm
+    created_at:
+        label: initbiz.newsletter::lang.columns.created
+        searchable: true
+        type: datetime
+        format: Y-m-d G:i
+    updated_at:
+        label: initbiz.newsletter::lang.columns.updated
+        searchable: true
+        type: datetime
+        format: Y-m-d G:i

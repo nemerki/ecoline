@@ -1,0 +1,23 @@
+description = "Homepage"
+
+[localePicker]
+forceUrl = 1
+
+[staticPage]
+useContent = 0
+default = 1
+
+==
+
+{variable name="slider_bottom_title" label="Title" type="text" tab="Slider Bottom" }{/variable}
+{variable name="slider_bottom_subtitle" label="Subtitle" type="text" tab="Slider Bottom" }{/variable}
+{variable name="slider_bottom_btn_text" label="Button Text" type="text" tab="Slider Bottom" }{/variable}
+{variable name="slider_bottom_btn_link" label="Button Link" type="text" tab="Slider Bottom" }{/variable}
+
+
+{repeater name="advantage" prompt="Add an item." tab="Advantage"}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="description" label="Link" type="textarea"}{/variable}
+{variable name="img" label="Image" type="mediafinder" mode="image"}{/variable}
+{/repeater}
+

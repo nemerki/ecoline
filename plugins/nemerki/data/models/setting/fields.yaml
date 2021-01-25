@@ -1,0 +1,61 @@
+tabs:
+    fields:
+        header_open:
+            label: 'nemerki.data::lang.all.header_open'
+            span: full
+            type: text
+            tab: Header
+        header_phone:
+            label: 'nemerki.data::lang.all.header_phone'
+            span: full
+            type: text
+            tab: Header
+        header_logo:
+            label: 'nemerki.data::lang.all.header_logo'
+            mode: image
+            span: auto
+            type: mediafinder
+            tab: Header
+        copyright:
+            label: Copyright
+            span: full
+            type: text
+            tab: Footer
+        footer_logo:
+            label: 'Footer Logo'
+            mode: image
+            span: auto
+            type: mediafinder
+            tab: Footer
+        social:
+            label: Social
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            tab: Footer
+            form:
+                fields:
+                    url:
+                        label: 'nemerki.data::lang.all.url'
+                        span: full
+                        type: text
+                    icon:
+                        label: 'İcon class'
+                        span: full
+                        type: text
+        map_location:
+            label: 'Map Location'
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            tab: Map
+            form:
+                fields:
+                    lat:
+                        label: Latitude
+                        span: auto
+                        type: text
+                    long:
+                        label: Longitude
+                        span: auto
+                        type: text
